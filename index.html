@@ -4,204 +4,129 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Doğu Anadolu Şehit Aileleri, Gaziler ve Güvenlik Korucuları Derneği. Erzurum merkezli şehit yakınları ve gaziler dayanışma platformu.">
-    <meta name="keywords" content="erzurum şehit gazi derneği, doğu anadolu şehit gazi, güvenlik korucuları derneği, erzurum şehit aileleri">
     <title>Doğu Anadolu Şehit Aileleri, Gaziler ve Güvenlik Korucuları Derneği</title>
-    
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts (Inter) -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Tailwind Config for Custom Colors -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'bayrak-kirmizi': '#E30A17', // Türk Bayrağı Kırmızısı
-                        'bayrak-beyaz': '#FFFFFF',
-                        'koyu-antrasit': '#1F2937',
+                        'bayrak-kirmizi': '#E30A17',
                         'koyu-siyah': '#111827',
                     },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    }
+                    fontFamily: { sans: ['Inter', 'sans-serif'] }
                 }
             }
         }
+
+        // ==========================================
+        // YÖNETİM ALANI (BURAYI GÜNCELLEYEBİLİRSİN)
+        // ==========================================
+        const SITE_VERILERI = {
+            hakkimizda: "Doğu Anadolu Şehit Aileleri, Gaziler ve Güvenlik Korucuları Derneği olarak; vatanımızın bölünmez bütünlüğü uğruna canlarını feda eden kahramanlarımızın emanetlerine sahip çıkmak, gazilerimizin ve korucularımızın haklarını savunmak için Erzurum merkezli olarak faaliyet gösteriyoruz.",
+            misyon: "Şehitlerimizin aziz hatırasını yaşatmak, ailelerimize sahip çıkmak ve gazilerimizin her daim yanında yer alarak toplumsal dayanışmayı güçlendirmek.",
+            vizyon: "Doğu Anadolu bölgesinde vatan evlatları ve emanetleri için en kapsamlı ve güvenilir sivil toplum kuruluşu olmak.",
+            
+            duyurular: [
+                {
+                    baslik: "Yeni Yönetim Kurulu Duyurusu",
+                    tarih: "11 Mart 2026",
+                    resim: "https://images.unsplash.com/photo-1594931920512-409ba55cc5f3?w=800",
+                    metin: "Derneğimizin yeni dönem projelerini görüşmek üzere yönetim kurulumuz Erzurum merkez binamızda toplandı."
+                },
+                {
+                    baslik: "18 Mart Şehitleri Anma Programı",
+                    tarih: "18 Mart 2026",
+                    resim: "https://images.unsplash.com/photo-1572537361219-c96765798782?w=800",
+                    metin: "Çanakkale Zaferi'nin yıl dönümünde tüm şehitlerimizi Erzurum Şehitliği'nde dualarla anacağız."
+                }
+            ]
+        };
     </script>
-
-    <style>
-        /* Hero görseli için overlay efekti */
-        .hero-overlay {
-            background: linear-gradient(rgba(17, 24, 39, 0.85), rgba(17, 24, 39, 0.6));
-        }
-        
-        /* Logo için özel stil */
-        .logo-img {
-            height: 80px; /* İstenilen sabit yükseklik */
-            width: auto;
-            object-fit: contain;
-        }
-    </style>
 </head>
-<body class="font-sans text-gray-800 bg-gray-50 antialiased">
+<body class="bg-gray-50 text-gray-800 antialiased">
 
-    <!-- HEADER / NAVBAR -->
-    <header class="bg-koyu-siyah text-white fixed w-full top-0 z-50 shadow-xl border-b-4 border-bayrak-kirmizi transition-all duration-300">
-        <div class="container mx-auto px-4 py-2 flex justify-between items-center">
-            <!-- Logo Alanı -->
-            <div class="flex items-center space-x-4">
-                <!-- Logo Resmi -->
-                <img src="logo.png" alt="Dernek Logosu" class="logo-img">
-                
-                <!-- Logo yoksa veya mobilde görünmüyorsa yazı -->
-                <div class="hidden md:block">
-                    <h1 class="text-sm font-bold leading-tight text-white">DOĞU ANADOLU</h1>
-                    <p class="text-xs text-gray-400">Şehit Aileleri, Gaziler ve Korucuları Derneği</p>
+    <header class="bg-koyu-siyah text-white fixed w-full top-0 z-50 border-b-4 border-bayrak-kirmizi shadow-lg">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <i class="fa-solid fa-star-and-crescent text-3xl text-bayrak-kirmizi"></i>
+                <div class="leading-tight">
+                    <h1 class="text-sm font-bold uppercase tracking-wider">DOĞU ANADOLU</h1>
+                    <p class="text-[10px] text-gray-400 uppercase">Şehit Aileleri, Gaziler ve Korucuları Derneği</p>
                 </div>
             </div>
-
-            <!-- Desktop Menü -->
-            <nav class="hidden md:flex space-x-8 text-sm font-semibold uppercase tracking-wide">
-                <a href="#anasayfa" class="hover:text-bayrak-kirmizi transition duration-300 border-b-2 border-transparent hover:border-bayrak-kirmizi pb-1">Anasayfa</a>
-                <a href="#hakkimizda" class="hover:text-bayrak-kirmizi transition duration-300 border-b-2 border-transparent hover:border-bayrak-kirmizi pb-1">Hakkımızda</a>
-                <a href="#sehitlerimiz" class="hover:text-bayrak-kirmizi transition duration-300 border-b-2 border-transparent hover:border-bayrak-kirmizi pb-1">Şehitlerimiz</a>
-                <a href="#gazilerimiz" class="hover:text-bayrak-kirmizi transition duration-300 border-b-2 border-transparent hover:border-bayrak-kirmizi pb-1">Gazilerimiz</a>
-                <a href="#duyurular" class="hover:text-bayrak-kirmizi transition duration-300 border-b-2 border-transparent hover:border-bayrak-kirmizi pb-1">Duyurular</a>
-                <a href="#iletisim" class="px-5 py-2 bg-bayrak-kirmizi hover:bg-red-700 rounded text-white transition duration-300 shadow-lg">İletişim</a>
+            <nav class="hidden md:flex space-x-6 text-xs font-bold uppercase">
+                <a href="#hakkimizda" class="hover:text-bayrak-kirmizi">Hakkımızda</a>
+                <a href="#duyurular" class="hover:text-bayrak-kirmizi">Duyurular</a>
+                <a href="#iletisim" class="bg-bayrak-kirmizi px-4 py-2 rounded">İletişim</a>
             </nav>
-
-            <!-- Mobil Menü Butonu -->
-            <button id="mobile-menu-btn" class="md:hidden text-2xl text-white focus:outline-none hover:text-bayrak-kirmizi transition">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-        </div>
-
-        <!-- Mobil Menü (Gizli) -->
-        <div id="mobile-menu" class="hidden md:hidden bg-koyu-siyah border-t border-gray-800">
-            <a href="#anasayfa" class="block py-4 px-6 hover:bg-gray-800 border-b border-gray-800">Anasayfa</a>
-            <a href="#hakkimizda" class="block py-4 px-6 hover:bg-gray-800 border-b border-gray-800">Hakkımızda</a>
-            <a href="#sehitlerimiz" class="block py-4 px-6 hover:bg-gray-800 border-b border-gray-800">Şehitlerimiz</a>
-            <a href="#gazilerimiz" class="block py-4 px-6 hover:bg-gray-800 border-b border-gray-800">Gazilerimiz</a>
-            <a href="#duyurular" class="block py-4 px-6 hover:bg-gray-800 border-b border-gray-800">Duyurular</a>
-            <a href="#iletisim" class="block py-4 px-6 text-bayrak-kirmizi font-bold bg-gray-900">İletişim</a>
         </div>
     </header>
 
-    <!-- HERO BÖLÜMÜ -->
-    <section id="anasayfa" class="relative h-screen flex items-center justify-center bg-fixed bg-center bg-cover" style="background-image: url('https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
-        <div class="absolute inset-0 hero-overlay"></div>
-        
-        <div class="relative z-10 text-center px-4 max-w-5xl mx-auto mt-16">
-            <div class="inline-block mb-4 px-4 py-1 border border-bayrak-kirmizi rounded-full bg-black/30 backdrop-blur-sm">
-                <p class="text-bayrak-kirmizi font-bold tracking-[0.2em] uppercase text-sm md:text-base">Vatan Size Minnettar</p>
-            </div>
-            
-            <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-tight drop-shadow-lg">
-                Doğu Anadolu'nun <br> 
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-400">Gururlu Evlatları</span>
-            </h1>
-            
-            <p class="text-gray-200 text-lg md:text-xl mb-10 max-w-3xl mx-auto font-light leading-relaxed">
-                Şehit ailelerimizin huzuru, gazilerimizin onuru ve korucularımızın fedakarlığı için bir aradayız.
-            </p>
-            
-            <div class="flex flex-col md:flex-row justify-center gap-4">
-                <a href="#iletisim" class="px-8 py-4 bg-bayrak-kirmizi text-white font-bold rounded hover:bg-red-700 transition duration-300 shadow-lg transform hover:-translate-y-1">
-                    Bize Ulaşın
-                </a>
-                <a href="#hakkimizda" class="px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded hover:bg-white hover:text-koyu-siyah transition duration-300">
-                    Hakkımızda
-                </a>
-            </div>
+    <section class="relative h-[60vh] flex items-center justify-center bg-koyu-siyah">
+        <div class="absolute inset-0 opacity-40">
+            <img src="https://images.unsplash.com/photo-1541963463532-d68292c34b19?w=1600" class="w-full h-full object-cover">
+        </div>
+        <div class="relative z-10 text-center px-4">
+            <h2 class="text-4xl md:text-6xl font-extrabold text-white mb-4">Vatan Size Minnettar</h2>
+            <div class="w-24 h-1 bg-bayrak-kirmizi mx-auto"></div>
         </div>
     </section>
 
-                            <!-- İkon Kartı -->
-                        <div class="absolute bottom-6 left-6 bg-white p-4 rounded-lg shadow-lg flex items-center space-x-3 animate-bounce">
-                            <div class="w-10 h-10 p-1 rounded-full bg-bayrak-kirmizi flex items-center justify-center shadow">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-6 h-6">
-                                    <rect width="512" height="512" fill="#E30A17"/> 
-                                    <circle cx="220" cy="256" r="92" fill="#fff"/>
-                                    <circle cx="250" cy="256" r="78" fill="#E30A17"/>
-                                    <polygon fill="#fff" points="289,224 310,280 274,254 310,228 289,284 301,235 262,267 301,236"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <p class="text-xs text-gray-500 font-bold uppercase">Misyonumuz</p>
-                                <p class="text-sm font-bold text-koyu-siyah">Yardımseverlik</p>
-                            </div>
-                        </div>
-                
-    <!-- HAKKIMIZDA -->
-    <section id="hakkimizda" class="py-24 bg-white relative overflow-hidden">
-        <!-- Dekoratif Arka Plan -->
-        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-gray-100 rounded-full opacity-50 blur-3xl"></div>
-        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-red-50 rounded-full opacity-50 blur-3xl"></div>
-
-        <div class="container mx-auto px-4 relative z-10">
-            <div class="flex flex-col md:flex-row items-center gap-16">
-                <div class="md:w-1/2 order-2 md:order-1">
-                    <div class="relative group">
-                        <div class="absolute -inset-1 bg-gradient-to-r from-bayrak-kirmizi to-red-900 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
-                        <img src="https://images.unsplash.com/photo-1594931920512-409ba55cc5f3?auto=format&fit=crop&w=800&q=80" alt="Dernek Toplantısı" class="relative rounded-lg shadow-2xl w-full object-cover h-[500px]">
-                        
-
-                <div class="md:w-1/2 order-1 md:order-2">
-                    <div class="flex items-center space-x-3 mb-4">
-                        <div class="h-1 w-12 bg-bayrak-kirmizi rounded"></div>
-                        <span class="text-bayrak-kirmizi font-bold uppercase tracking-widest text-sm">Hakkımızda</span>
-                    </div>
-                    
-                    <h2 class="text-4xl md:text-5xl font-bold text-koyu-siyah mb-8 leading-tight">
-                        Vatanın Bekçileri <br> Bir Arada
-                    </h2>
-                    
-                    <div class="prose text-gray-600 text-lg leading-relaxed mb-8">
-                        <p>
-                            <strong class="text-koyu-siyah">Doğu Anadolu Şehit Aileleri, Gaziler ve Güvenlik Korucuları Derneği</strong> olarak; vatanımızın bölünmez bütünlüğü uğruna canlarını feda eden kahramanlarımızın emanetlerine sahip çıkmak, gazilerimizin ve korucularımızın haklarını savunmak ve yardımlaşma ruhunu diri tutmak için <span class="text-bayrak-kirmizi font-bold">Erzurum</span> merkezli olarak faaliyet gösteriyoruz.
-                        </p>
-                    </div>
-
-                    <ul class="space-y-4 mb-8">
-                        <li class="flex items-center space-x-3">
-                            <i class="fa-solid fa-check-circle text-bayrak-kirmizi text-xl"></i>
-                            <span class="text-gray-700 font-medium">Şehit Ailelerinin Sosyal Yardımlaşması</span>
-                        </li>
-                        <li class="flex items-center space-x-3">
-                            <i class="fa-solid fa-check-circle text-bayrak-kirmizi text-xl"></i>
-                            <span class="text-gray-700 font-medium">Gaziler ve Korucuların Haklarının Takibi</span>
-                        </li>
-                        <li class="flex items-center space-x-3">
-                            <i class="fa-solid fa-check-circle text-bayrak-kirmizi text-xl"></i>
-                            <span class="text-gray-700 font-medium">Toplumsal Dayanışma ve Birliktelik</span>
-                        </li>
-                    </ul>
+    <section id="hakkimizda" class="py-20 bg-white">
+        <div class="container mx-auto px-4 max-w-4xl text-center">
+            <h3 class="text-3xl font-bold mb-8 text-koyu-siyah">Biz Kimiz?</h3>
+            <p id="hakkimizda-yazi" class="text-lg text-gray-600 leading-relaxed mb-12 italic"></p>
+            
+            <div class="grid md:grid-cols-2 gap-8 text-left">
+                <div class="p-6 bg-gray-50 rounded-xl border-l-4 border-bayrak-kirmizi">
+                    <h4 class="font-bold text-bayrak-kirmizi mb-2 uppercase text-sm">Misyonumuz</h4>
+                    <p id="misyon-yazi" class="text-gray-700"></p>
+                </div>
+                <div class="p-6 bg-gray-50 rounded-xl border-l-4 border-bayrak-kirmizi">
+                    <h4 class="font-bold text-bayrak-kirmizi mb-2 uppercase text-sm">Vizyonumuz</h4>
+                    <p id="vizyon-yazi" class="text-gray-700"></p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- DUYURULAR / HABERLER -->
-    <section id="duyurular" class="py-24 bg-gray-50">
+    <section id="duyurular" class="py-20 bg-gray-50">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <span class="text-bayrak-kirmizi font-bold uppercase tracking-widest text-sm">Güncel Gelişmeler</span>
-                <h2 class="text-3xl md:text-5xl font-bold text-koyu-siyah mt-2">Duyurular ve Etkinlikler</h2>
-                <div class="w-24 h-1 bg-bayrak-kirmizi mx-auto mt-4"></div>
-            </div>
+            <h3 class="text-3xl font-bold text-center mb-16 text-koyu-siyah">Güncel Duyurular</h3>
+            <div id="duyuru-listesi" class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                </div>
+        </div>
+    </section>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Kart 1 -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 group border border-gray-100">
-                    <div class="h-56 overflow-hidden relative">
-                        <div class="absolute top-4 left-4 bg-bayrak-kirmizi text-white text-xs font-bold px-3 py-1 rounded shadow">Duyuru</div>
-                        <img src="https://images.unsplash.com/photo-1532375810709-75b1da00537c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Duyuru" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+    <footer id="iletisim" class="bg-koyu-siyah text-white py-12 border-t-8 border-bayrak-kirmizi text-center">
+        <p class="mb-4 font-bold uppercase tracking-widest text-sm">Erzurum Şubesi - Doğu Anadolu Bölge Başkanlığı</p>
+        <p class="text-gray-400 text-sm italic mb-6">"Şehitler nurlanmış, Gaziler onurlanmış askerdir."</p>
+        <p class="text-xs text-gray-600">© 2026 Tüm Hakları Saklıdır.</p>
+    </footer>
+
+    <script>
+        // Verileri sayfaya otomatik basan script
+        document.getElementById('hakkimizda-yazi').innerText = SITE_VERILERI.hakkimizda;
+        document.getElementById('misyon-yazi').innerText = SITE_VERILERI.misyon;
+        document.getElementById('vizyon-yazi').innerText = SITE_VERILERI.vizyon;
+
+        const duyuruListesi = document.getElementById('duyuru-listesi');
+        SITE_VERILERI.duyurular.forEach(d => {
+            duyuruListesi.innerHTML += `
+                <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <img src="${d.resim}" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-bayrak-kirmizi uppercase">${d.tarih}</span>
+                        <h4 class="text-xl font-bold mt-2 mb-4 text-koyu-siyah">${d.baslik}</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed">${d.metin}</p>
                     </div>
-                    <div class="p-8">
-                        <h3 class="text-xl font-bold text-koyu-siyah mb-3 group-hover:text-bayrak-kirm
+                </div>
+            `;
+        });
+    </script>
+</body>
+</html>
