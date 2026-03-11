@@ -79,16 +79,17 @@
         <a href="index.html" class="flex items-center gap-3">
             <img src="logo.png" alt="Logo" class="h-10 w-auto object-contain">
             <div class="leading-tight">
-                <h1 class="text-sm md:text-lg font-bold uppercase tracking-tight">DOĞU ANADOLU</h1>
-                <p class="text-[9px] text-gray-400 uppercase hidden sm:block tracking-widest">Şehit Aileleri ve Gaziler Derneği</p>
+                <h1 class="text-sm md:text-lg font-bold uppercase tracking-tight text-white">DOĞU ANADOLU</h1>
+                <p class="text-[9px] text-gray-400 uppercase hidden sm:block tracking-widest text-white/70">Şehit Gazi Derneği</p>
             </div>
         </a>
 
-        <div class="hidden md:flex space-x-6 items-center font-bold text-xs uppercase text-white">
-            <a href="index.html" class="hover:text-[#E30A17] transition duration-300">Anasayfa</a>
-            <a href="hakkimizda.html" class="text-[#E30A17] transition duration-300">Hakkımızda</a>
-            <a href="sehitlerimiz.html" class="hover:text-[#E30A17] transition duration-300">Şehitlerimiz</a>
-            <a href="iletisim.html" class="px-5 py-2 bg-[#E30A17] hover:bg-red-700 text-white rounded transition duration-300 shadow-lg">İletişim</a>
+        <div class="hidden md:flex space-x-6 items-center font-bold text-[11px] uppercase text-white">
+            <a href="index.html" class="hover:text-[#E30A17] transition">Anasayfa</a>
+            <a href="hakkimizda.html" class="hover:text-[#E30A17] transition text-white">Hakkımızda</a>
+            <a href="sehitlerimiz.html" class="hover:text-[#E30A17] transition text-white">Şehitlerimiz</a>
+            <a href="uyelik.html" class="hover:text-[#E30A17] transition text-[#E30A17]">Üyelik</a>
+            <a href="iletisim.html" class="px-4 py-2 bg-[#E30A17] rounded hover:bg-red-700 transition shadow-md">İletişim</a>
         </div>
 
         <div class="flex md:hidden items-center">
@@ -100,20 +101,17 @@
 
     <div id="mobile-sidebar" class="fixed inset-y-0 right-0 w-64 bg-[#111827] z-[60] transform translate-x-full transition-transform duration-300 ease-in-out shadow-2xl md:hidden border-l-4 border-[#E30A17]">
         <div class="p-6 flex flex-col h-full">
-            <button id="close-sidebar" class="text-white self-end text-2xl mb-10 hover:text-[#E30A17]">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-
+            <button id="close-sidebar" class="text-white self-end text-2xl mb-10"><i class="fa-solid fa-xmark"></i></button>
             <div class="flex flex-col space-y-6 font-bold text-sm uppercase tracking-widest text-white">
-                <a href="index.html" class="sidebar-link py-2 border-b border-gray-800 hover:text-[#E30A17]">Anasayfa</a>
-                <a href="hakkimizda.html" class="sidebar-link py-2 border-b border-gray-800 text-[#E30A17]">Hakkımızda</a>
-                <a href="sehitlerimiz.html" class="sidebar-link py-2 border-b border-gray-800 hover:text-[#E30A17]">Şehitlerimiz</a>
-                <a href="iletisim.html" class="sidebar-link py-4 bg-[#E30A17] text-center rounded shadow-lg text-white">İletişim</a>
+                <a href="index.html" class="sidebar-link py-2 border-b border-gray-800">Anasayfa</a>
+                <a href="hakkimizda.html" class="sidebar-link py-2 border-b border-gray-800">Hakkımızda</a>
+                <a href="sehitlerimiz.html" class="sidebar-link py-2 border-b border-gray-800">Şehitlerimiz</a>
+                <a href="uyelik.html" class="sidebar-link py-2 border-b border-gray-800 text-[#E30A17]">Üyelik</a>
+                <a href="iletisim.html" class="sidebar-link py-4 bg-[#E30A17] text-center rounded text-white">İletişim</a>
             </div>
         </div>
     </div>
-
-    <div id="sidebar-overlay" class="fixed inset-0 bg-black/60 z-[55] hidden md:hidden transition-opacity"></div>
+    <div id="sidebar-overlay" class="fixed inset-0 bg-black/60 z-[55] hidden md:hidden"></div>
 </nav>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
