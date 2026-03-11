@@ -8,24 +8,62 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="bg-[#111827] text-white">
-    <nav class="bg-[#111827] border-b-4 border-[#E30A17] p-6 text-center">
-        <a href="index.html" class="text-white font-bold uppercase tracking-widest hover:text-[#E30A17]">
-            <i class="fa-solid fa-house mr-2"></i> Anasayfaya Dön
-        </a>
+
+    <nav class="bg-[#111827] text-white border-b-4 border-[#E30A17] sticky top-0 z-50 h-20 shadow-xl">
+        <div class="max-w-7xl mx-auto px-4 h-full flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="logo.png" alt="Logo" class="h-12 w-auto">
+                <h1 class="text-sm md:text-lg font-bold uppercase">DOĞU ANADOLU</h1>
+            </a>
+            <button id="mobile-menu-btn" class="md:hidden text-2xl p-2"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+            <div class="hidden md:flex space-x-6 items-center font-bold text-xs uppercase">
+                <a href="index.html">Anasayfa</a>
+                <a href="sehitlerimiz.html" class="text-[#E30A17]">Şehitlerimiz</a>
+                <a href="iletisim.html" class="px-4 py-2 bg-[#E30A17] rounded">İletişim</a>
+            </div>
+        </div>
+        <div id="mobile-sidebar" class="fixed inset-y-0 right-0 w-64 bg-[#111827] z-[60] transform translate-x-full transition-transform duration-300 border-l-4 border-[#E30A17] md:hidden">
+            <div class="p-8 flex flex-col space-y-6 font-bold uppercase text-sm">
+                <button id="close-sidebar" class="self-end text-2xl mb-4"><i class="fa-solid fa-xmark"></i></button>
+                <a href="index.html">Anasayfa</a>
+                <a href="sehitlerimiz.html" class="text-[#E30A17]">Şehitlerimiz</a>
+                <a href="iletisim.html">İletişim</a>
+            </div>
+        </div>
+        <div id="sidebar-overlay" class="fixed inset-0 bg-black/70 z-[55] hidden md:hidden"></div>
     </nav>
 
-    <main class="container mx-auto px-4 py-16">
-        <h1 class="text-4xl font-serif text-center mb-16 uppercase tracking-[0.3em]">Aziz Şehitlerimiz</h1>
-        
-        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
-            <a href="sehit-huseyin-kaya.html" class="group text-center">
-                <div class="aspect-[3/4] overflow-hidden rounded-lg border-2 border-gray-800 group-hover:border-[#E30A17] transition-all duration-500">
-                    <img src="assets/img/sehit1.jpg" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700">
-                </div>
-                <h3 class="mt-4 font-bold text-lg uppercase group-hover:text-[#E30A17]">Şehit Hüseyin KAYA</h3>
-                <p class="text-xs text-gray-500 uppercase">JND. Uzm. Çvş.</p>
-            </a>
+    <header class="py-12 text-center bg-gray-900/50">
+        <h2 class="text-4xl font-bold uppercase tracking-widest">Aziz Şehitlerimiz</h2>
+        <div class="w-24 h-1 bg-[#E30A17] mx-auto mt-4"></div>
+    </header>
+
+    <main class="container mx-auto px-4 py-12">
+        <div id="sehit-listesi" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+
+            <div class="group border border-gray-800 p-4 rounded-xl bg-gray-900/30 hover:border-[#E30A17] transition-all duration-500 shadow-lg">
+                <a href="sehit-huseyin-kaya.html" class="block">
+                    <div class="aspect-[3/4] overflow-hidden rounded-lg mb-4">
+                        <img src="assets/img/sehit-huseyin-kaya.png" 
+                             alt="Hüseyin Kaya" 
+                             class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700">
+                    </div>
+                    <h3 class="text-xl font-bold uppercase text-center group-hover:text-[#E30A17] transition-colors">Hüseyin Kaya</h3>
+                    <p class="text-[10px] text-gray-500 text-center uppercase mt-2 tracking-widest">Şehadet: 16.11.1996</p>
+                </a>
+            </div>
+            
             </div>
     </main>
+
+    <script>
+        // Mobil Menü Mantığı
+        const btn = document.getElementById('mobile-menu-btn');
+        const close = document.getElementById('close-sidebar');
+        const side = document.getElementById('mobile-sidebar');
+        const over = document.getElementById('sidebar-overlay');
+        function toggle() { side.classList.toggle('translate-x-full'); over.classList.toggle('hidden'); }
+        btn.onclick = toggle; close.onclick = toggle; over.onclick = toggle;
+    </script>
 </body>
 </html>
