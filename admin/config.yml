@@ -1,0 +1,31 @@
+backend:
+  name: github
+  repo: frknky22/doguanadolu-sehitgazi-dernegi # Burayı kendi kullanıcı adınla kontrol et
+  branch: main
+
+media_folder: "assets/img" # Resimlerin yükleneceği klasör
+public_folder: "/assets/img"
+
+collections:
+  - name: "sayfalar"
+    label: "Sayfa İçerikleri"
+    files:
+      - file: "index.html"
+        label: "Ana Sayfa Düzenle"
+        name: "index"
+        fields:
+          - {label: "Hakkımızda Başlık", name: "hakkimizda_baslik", widget: "string"}
+          - {label: "Hakkımızda Metni", name: "hakkimizda_metin", widget: "markdown"}
+          - {label: "Misyonumuz", name: "misyon", widget: "string"}
+          - {label: "Vizyonumuz", name: "vizyon", widget: "string"}
+
+  - name: "duyurular"
+    label: "Duyurular ve Haberler"
+    folder: "_duyurular"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Duyuru Başlığı", name: "title", widget: "string"}
+      - {label: "Yayın Tarihi", name: "date", widget: "datetime"}
+      - {label: "Duyuru Görseli", name: "image", widget: "image"}
+      - {label: "Duyuru İçeriği", name: "body", widget: "markdown"}
