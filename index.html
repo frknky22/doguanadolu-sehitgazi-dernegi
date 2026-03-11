@@ -45,9 +45,34 @@
         .hero-overlay {
             background: linear-gradient(rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 0.7));
         }
+        
+        /* LOGO WATERMARK AYARLARI */
+        .logo-watermark {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+            height: auto;
+            opacity: 0.12; /* Çok silik, su filigranı efekti */
+            pointer-events: none; /* Tıklamayı engelleme */
+            z-index: 0;
+            user-select: none;
+        }
+        
+        /* Mobilde logo boyutunu küçült */
+        @media (max-width: 768px) {
+            .logo-watermark {
+                width: 200px;
+            }
+        }
     </style>
 </head>
-<body class="flex flex-col min-h-screen">
+<body class="flex flex-col min-h-screen relative">
+
+    <!-- LOGO WATERMARK (Arka Plan Logosu) -->
+    <!-- logo.png dosyasını projenizin kök dizinine eklemeyi unutmayın -->
+    <img src="logo.png" alt="Dernek Logosu" class="logo-watermark">
 
     <!-- NAVBAR -->
     <nav class="bg-dark-bg text-white border-b-4 border-turkish-red sticky top-0 z-50 shadow-lg">
@@ -63,12 +88,19 @@
                         <p class="text-xs text-gray-400 tracking-widest uppercase">Doğu Anadolu Şehit Aileleri, Gaziler ve Güvenlik Korucuları</p>
                     </div>
                 </div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="hover:text-turkish-red transition duration-300 font-medium">Ana Sayfa</a>
+                
+                <!-- Desktop Menü -->
+                <div class="hidden md:flex space-x-6 items-center">
+                    <a href="#home" class="hover:text-turkish-red transition duration-300 font-medium">Anasayfa</a>
                     <a href="#about" class="hover:text-turkish-red transition duration-300 font-medium">Hakkımızda</a>
                     <a href="#announcements" class="hover:text-turkish-red transition duration-300 font-medium">Duyurular</a>
-                    <a href="#contact" class="hover:text-turkish-red transition duration-300 font-medium">İletişim</a>
+                    <a href="#martyrs" class="hover:text-turkish-red transition duration-300 font-medium">Şehitlerimiz</a>
+                    <a href="#veterans" class="hover:text-turkish-red transition duration-300 font-medium">Gazilerimiz</a>
+                    <a href="#contact" class="px-5 py-2 bg-turkish-red hover:bg-red-700 text-white font-bold rounded transition duration-300 shadow-lg">
+                        İletişim
+                    </a>
                 </div>
+
                 <!-- Mobile Menu Button -->
                 <div class="md:hidden flex items-center">
                     <button id="mobile-menu-btn" class="text-white hover:text-turkish-red focus:outline-none">
@@ -80,11 +112,13 @@
             </div>
         </div>
         <!-- Mobile Menu Panel -->
-        <div id="mobile-menu" class="hidden md:hidden bg-gray-800">
-            <a href="#home" class="block py-2 px-4 text-sm hover:bg-gray-700">Ana Sayfa</a>
-            <a href="#about" class="block py-2 px-4 text-sm hover:bg-gray-700">Hakkımızda</a>
-            <a href="#announcements" class="block py-2 px-4 text-sm hover:bg-gray-700">Duyurular</a>
-            <a href="#contact" class="block py-2 px-4 text-sm hover:bg-gray-700">İletişim</a>
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800 border-t border-gray-700">
+            <a href="#home" class="block py-3 px-4 text-sm hover:bg-gray-700 border-b border-gray-700">Anasayfa</a>
+            <a href="#about" class="block py-3 px-4 text-sm hover:bg-gray-700 border-b border-gray-700">Hakkımızda</a>
+            <a href="#announcements" class="block py-3 px-4 text-sm hover:bg-gray-700 border-b border-gray-700">Duyurular</a>
+            <a href="#martyrs" class="block py-3 px-4 text-sm hover:bg-gray-700 border-b border-gray-700">Şehitlerimiz</a>
+            <a href="#veterans" class="block py-3 px-4 text-sm hover:bg-gray-700 border-b border-gray-700">Gazilerimiz</a>
+            <a href="#contact" class="block py-3 px-4 text-sm bg-turkish-red text-white font-bold">İletişim</a>
         </div>
     </nav>
 
@@ -151,6 +185,30 @@
         </div>
     </section>
 
+    <!-- MARTYRS SECTION (Placeholder) -->
+    <section id="martyrs" class="py-16 bg-dark-bg text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Şehitlerimiz</h2>
+            <div class="w-24 h-1 bg-turkish-red mx-auto mb-8"></div>
+            <p class="text-gray-300 max-w-2xl mx-auto">
+                Vatanımız için canlarını feda eden aziz şehitlerimizi rahmet, minnet ve özlemle anıyoruz.
+            </p>
+            <!-- Buraya şehitler listesi eklenebilir -->
+        </div>
+    </section>
+
+    <!-- VETERANS SECTION (Placeholder) -->
+    <section id="veterans" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-dark-bg mb-4">Gazilerimiz</h2>
+            <div class="w-24 h-1 bg-turkish-red mx-auto mb-8"></div>
+            <p class="text-gray-600 max-w-2xl mx-auto">
+                Vatanın bekçisi, milletin kahramanı gazilerimizin yanında olmaya devam ediyoruz.
+            </p>
+            <!-- Buraya gaziler listesi eklenebilir -->
+        </div>
+    </section>
+
     <!-- FOOTER -->
     <footer id="contact" class="bg-dark-bg text-white mt-auto">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -201,26 +259,4 @@
                 ctaButton: "Bize Katılın"
             },
             about: "Derneğimiz, Doğu Anadolu Bölgesi'nde görev yapan güvenlik güçlerimizin şehit olan ailelerine, gazilerimize ve güvenlik korucularına manevi ve maddi destek sağlamak amacıyla Erzurum merkezli olarak kurulmuştur. Vatan sevgisi, birlik ve beraberlik bilinciyle hareket eden derneğimiz, şehitlerimizin aziz hatırasını yaşatırken, gazilerimizin ve ailelerinin sosyal hayata entegrasyonuna katkı sağlamayı misyon edinmiştir.",
-            mission: "Şehit yakınlarının ve gazilerimizin haklarını korumak, onlara gereken sosyal ve hukuki desteği sağlamak, bölgedeki güvenlik güçlerinin moralini yükseltmek ve vatan sevgisini gelecek nesillere aktarmak.",
-            vision: "Toplumun her kesiminden insanın saygı duyduğu, şehit ve gazilerimizin hak ettiği değeri gördüğü, Doğu Anadolu'nun en güçlü sivil toplum kuruluşu olmak.",
-            announcements: [
-                {
-                    id: 1,
-                    title: "15 Temmuz Demokrasi ve Milli Birlik Günü",
-                    date: "15 Temmuz 2023",
-                    description: "Türkiye Cumhuriyeti'nin ve Türk milletinin bağımsızlığının simgesi olan 15 Temmuz Demokrasi ve Milli Birlik Günü'nü, derneğimiz binasında düzenlediğimiz törenle anıyoruz.",
-                    image: "https://images.unsplash.com/photo-1579969565606-732772222323?q=80&w=800&auto=format&fit=crop"
-                },
-                {
-                    id: 2,
-                    title: "Gaziler Günü Kutlamaları",
-                    date: "18 Haziran 2023",
-                    description: "Gaziler Günü kapsamında, şehit yakınlarımız ve gazilerimiz için özel bir kahvaltı programı düzenlenecektir. Tüm üyelerimizin davetlisidir.",
-                    image: "https://images.unsplash.com/photo-1596728328960-225324422423?q=80&w=800&auto=format&fit=crop"
-                },
-                {
-                    id: 3,
-                    title: "Yeni Üye Kayıtları Başladı",
-                    date: "01 Haziran 2023",
-                    description: "Derneğimize yeni üyelerin kabulü için kayıt süreci başlamıştır. Güvenlik korucuları ve şehit yakınlarımızın başvuruları kabul edilmektedir.",
-                    image: "https
+            mission: "Şehit yakınlarının ve gazilerimizin haklarını korumak, onlara gereken sosyal ve hukuki desteği sağlamak, bölgedeki güvenlik güçlerinin moralini yükseltmek ve vatan sevgisini gelecek nesillere
