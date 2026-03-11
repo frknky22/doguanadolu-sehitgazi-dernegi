@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurumsal Yapı - Doğu Anadolu Şehit Gazi Derneği</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-[#111827] text-white antialiased">
+
+    <nav class="bg-[#111827] text-white border-b-4 border-[#E30A17] sticky top-0 z-50 shadow-lg h-20">
+        <div class="max-w-7xl mx-auto px-4 h-full flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="logo.png" alt="Logo" class="h-12 w-auto object-contain">
+                <div class="leading-tight">
+                    <h1 class="text-sm md:text-lg font-bold uppercase tracking-tight">DOĞU ANADOLU</h1>
+                    <p class="text-[9px] text-gray-400 uppercase hidden sm:block">Şehit Aileleri, Gaziler ve Korucular Derneği</p>
+                </div>
+            </a>
+            <div class="hidden md:flex space-x-6 items-center font-bold text-xs uppercase">
+                <a href="index.html" class="hover:text-[#E30A17] transition">Anasayfa</a>
+                <a href="hakkimizda.html" class="text-[#E30A17]">Hakkımızda</a>
+                <a href="sehitlerimiz.html" class="hover:text-[#E30A17] transition">Şehitlerimiz</a>
+                <a href="iletisim.html" class="px-5 py-2 bg-[#E30A17] rounded shadow-lg">İletişim</a>
+            </div>
+            <button id="mobile-menu-btn" class="md:hidden text-white text-2xl p-2"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+        </div>
+        <div id="mobile-sidebar" class="fixed inset-y-0 right-0 w-64 bg-[#111827] z-[60] transform translate-x-full transition-transform duration-300 border-l-4 border-[#E30A17] md:hidden">
+            <div class="p-8 flex flex-col space-y-6 font-bold uppercase text-sm">
+                <button id="close-sidebar" class="self-end text-2xl mb-4"><i class="fa-solid fa-xmark"></i></button>
+                <a href="index.html">Anasayfa</a>
+                <a href="hakkimizda.html" class="text-[#E30A17]">Hakkımızda</a>
+                <a href="sehitlerimiz.html">Şehitlerimiz</a>
+                <a href="iletisim.html" class="py-4 bg-[#E30A17] text-center rounded">İletişim</a>
+            </div>
+        </div>
+        <div id="sidebar-overlay" class="fixed inset-0 bg-black/70 z-[55] hidden md:hidden"></div>
+    </nav>
+
+    <header class="py-16 bg-gray-900/50 text-center">
+        <h2 class="text-4xl font-serif font-bold uppercase tracking-[0.3em]">Kurumsal Yönetim</h2>
+        <div class="w-24 h-1 bg-[#E30A17] mx-auto mt-4"></div>
+    </header>
+
+    <section class="container mx-auto px-4 py-20 relative">
+        
+        
+
+        <div class="flex flex-col items-center">
+            
+            <div class="group relative z-10">
+                <a href="yonetim-baskan.html" class="block bg-white text-[#111827] p-6 rounded-xl border-b-8 border-[#E30A17] shadow-2xl hover:scale-105 transition-all w-64 text-center">
+                    <div class="w-16 h-16 bg-gray-200 rounded-full mx-auto mb-3 flex items-center justify-center border-2 border-[#E30A17] text-[#E30A17]">
+                        <i class="fa-solid fa-user-tie text-2xl"></i>
+                    </div>
+                    <h3 class="font-black text-lg uppercase leading-tight">Dernek Başkanı</h3>
+                    <p class="text-xs font-bold text-gray-500 uppercase mt-1">İsim Soyisim</p>
+                </a>
+            </div>
+
+            <div class="w-0.5 h-12 bg-[#E30A17]"></div>
+
+            <div class="group relative z-10">
+                <a href="yonetim-yardimci.html" class="block bg-gray-800 text-white p-5 rounded-xl border-b-4 border-gray-400 shadow-xl hover:scale-105 transition-all w-64 text-center">
+                    <h3 class="font-black text-md uppercase">Başkan Yardımcısı</h3>
+                    <p class="text-[10px] font-bold text-[#E30A17] uppercase mt-1">İsim Soyisim</p>
+                </a>
+            </div>
+
+            <div class="hidden md:flex w-full max-w-5xl items-start justify-center mt-12">
+                <div class="w-1/4 h-0.5 bg-gray-700 relative">
+                    <div class="absolute right-1/2 top-0 w-0.5 h-8 bg-gray-700"></div>
+                </div>
+                <div class="w-1/4 h-0.5 bg-gray-700 relative">
+                    <div class="absolute right-1/2 top-0 w-0.5 h-8 bg-gray-700"></div>
+                </div>
+                <div class="w-1/4 h-0.5 bg-gray-700 relative">
+                    <div class="absolute right-1/2 top-0 w-0.5 h-8 bg-gray-700"></div>
+                </div>
+                <div class="w-1/4 h-0.5 bg-gray-700 relative">
+                    <div class="absolute right-1/2 top-0 w-0.5 h-8 bg-gray-700"></div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 w-full max-w-6xl mt-8 md:mt-0">
+                
+                <a href="yonetim-hukuk.html" class="bg-gray-900 border border-gray-800 p-6 rounded-lg text-center hover:border-[#E30A17] transition-all shadow-lg hover:-translate-y-2">
+                    <i class="fa-solid fa-scale-balanced text-[#E30A17] mb-3 text-xl"></i>
+                    <h4 class="font-bold text-sm uppercase">Hukuk ve Mevzuat</h4>
+                    <p class="text-[9px] text-gray-500 mt-2 uppercase">Şube Müdürü</p>
+                </a>
+
+                <a href="yonetim-sosyal.html" class="bg-gray-900 border border-gray-800 p-6 rounded-lg text-center hover:border-[#E30A17] transition-all shadow-lg hover:-translate-y-2">
+                    <i class="fa-solid fa-hands-holding-child text-[#E30A17] mb-3 text-xl"></i>
+                    <h4 class="font-bold text-sm uppercase">Sosyal İşler</h4>
+                    <p class="text-[9px] text-gray-500 mt-2 uppercase">Şube Müdürü</p>
+                </a>
+
+                <a href="yonetim-basin.html" class="bg-gray-900 border border-gray-800 p-6 rounded-lg text-center hover:border-[#E30A17] transition-all shadow-lg hover:-translate-y-2">
+                    <i class="fa-solid fa-bullhorn text-[#E30A17] mb-3 text-xl"></i>
+                    <h4 class="font-bold text-sm uppercase">Basın ve Arşiv</h4>
+                    <p class="text-[9px] text-gray-500 mt-2 uppercase">Şube Müdürü</p>
+                </a>
+
+                <a href="yonetim-mali.html" class="bg-gray-900 border border-gray-800 p-6 rounded-lg text-center hover:border-[#E30A17] transition-all shadow-lg hover:-translate-y-2">
+                    <i class="fa-solid fa-coins text-[#E30A17] mb-3 text-xl"></i>
+                    <h4 class="font-bold text-sm uppercase">Mali İşler</h4>
+                    <p class="text-[9px] text-gray-500 mt-2 uppercase">Şube Müdürü</p>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-[#111827] border-t-4 border-[#E30A17] py-12">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-gray-500 text-xs uppercase tracking-[0.4em] mb-4">Erzurum - Türkiye</p>
+            <p class="text-gray-400 text-[10px] uppercase">© 2026 Doğu Anadolu Şehit Gazi Derneği | Tüm Hakları Saklıdır.</p>
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const closeBtn = document.getElementById('close-sidebar');
+        const sidebar = document.getElementById('mobile-sidebar');
+        const overlay = document.getElementById('sidebar-overlay');
+        function toggle() { sidebar.classList.toggle('translate-x-full'); overlay.classList.toggle('hidden'); }
+        menuBtn.onclick = toggle; closeBtn.onclick = toggle; overlay.onclick = toggle;
+    </script>
+</body>
+</html>
