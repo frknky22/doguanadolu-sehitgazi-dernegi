@@ -266,12 +266,28 @@
     <!-- JAVASCRIPT LOGIC -->
     <script>
       
-        const SITE_DATA = {
-            siteTitle: "Doğu Anadolu Şehit Aileleri, Gaziler ve Güvenlik Korucuları Derneği",
-            hero: {
-                title: "Şehitlerimizi Unutmadık, Gazilerimizle Yan Yana",
-                subtitle: "Doğu Anadolu Bölgesi'nin en köklü ve saygın derneği olarak, şehit yakınlarının ve gazilerimizin yanında olmaya devam ediyoruz.",
-                ctaButton: "Bize Katılın"
-            },
-            about: "Derneğimiz, Doğu Anadolu Bölgesi'nde görev yapan güvenlik güçlerimizin şehit olan ailelerine, gazilerimize ve güvenlik korucularına manevi ve maddi destek sağlamak amacıyla Erzurum merkezli olarak kurulmuştur. Vatan sevgisi, birlik ve beraberlik bilinciyle hareket eden derneğimiz, şehitlerimizin aziz hatırasını yaşatırken, gazilerimizin ve ailelerinin sosyal hayata entegrasyonuna katkı sağlamayı misyon edinmiştir.",
-            mission: "Şehit yakınlarının ve gazilerimizin haklarını korumak, onlara gereken sosyal ve hukuki desteği sağlamak, bölgedeki güvenlik güçlerinin moralini yükseltmek ve vatan sevgisini gelecek nesillere
+        // 1. VERİLERİ TANIMLA
+const SITE_DATA = {
+    about: "Doğu Anadolu Şehit Aileleri, Gaziler ve Güvenlik Korucuları Derneği olarak; vatanımızın bölünmez bütünlüğü uğruna canlarını feda eden kahramanlarımızın emanetlerine sahip çıkmak, gazilerimizin ve korucularımızın haklarını savunmak ve yardımlaşma ruhunu diri tutmak için Erzurum merkezli olarak faaliyet gösteriyoruz.",
+    
+    mission: "Vatanımızın bölünmez bütünlüğü uğruna canlarını feda eden aziz şehitlerimizin emanetlerine sahip çıkmak, kahraman gazilerimizin ve güvenlik korucularımızın haklarını her platformda savunarak, Erzurum ve Doğu Anadolu genelinde yardımlaşma ve vefa ruhunu en üst seviyede diri tutmaktır.",
+    
+    vision: "Şehit yakınları, gaziler ve korucularımız için Türkiye’nin en güçlü ve saygın dayanışma ağı haline gelerek; hatıraların yaşatıldığı, hakların korunduğu ve gelecek nesillere vatan sevgisinin aşılandığı öncü bir sivil toplum kuruluşu olmak."
+};
+
+// 2. VERİLERİ SAYFAYA GÖNDER (Görünmesini Sağlayan Kısım Burası)
+document.addEventListener("DOMContentLoaded", function() {
+    // Hakkımızda kısmını doldur
+    if(document.getElementById('about-text')) {
+        document.getElementById('about-text').innerText = SITE_DATA.about;
+    }
+    // Misyon kısmını doldur
+    if(document.getElementById('mission-text')) {
+        document.getElementById('mission-text').innerText = SITE_DATA.mission;
+    }
+    // Vizyon kısmını doldur
+    if(document.getElementById('vision-text')) {
+        document.getElementById('vision-text').innerText = SITE_DATA.vision;
+    }
+});
+    </script>
