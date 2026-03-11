@@ -3,130 +3,224 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Doğu Anadolu Şehit Aileleri, Gaziler ve Güvenlik Korucuları Derneği. Erzurum merkezli şehit yakınları ve gaziler dayanışma platformu.">
     <title>Doğu Anadolu Şehit Aileleri, Gaziler ve Güvenlik Korucuları Derneği</title>
+    
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts: Playfair Display (Vakur Başlıklar) & Inter (Okunabilir Metinler) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 
+    <!-- Tailwind Config for Custom Colors -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'bayrak-kirmizi': '#E30A17',
-                        'koyu-siyah': '#111827',
+                        'turkish-red': '#E30A17',
+                        'dark-bg': '#111827',
+                        'light-gray': '#F3F4F6',
                     },
-                    fontFamily: { sans: ['Inter', 'sans-serif'] }
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
                 }
             }
         }
-
-        // ==========================================
-        // YÖNETİM ALANI (BURAYI GÜNCELLEYEBİLİRSİN)
-        // ==========================================
-        const SITE_VERILERI = {
-            hakkimizda: "Doğu Anadolu Şehit Aileleri, Gaziler ve Güvenlik Korucuları Derneği olarak; vatanımızın bölünmez bütünlüğü uğruna canlarını feda eden kahramanlarımızın emanetlerine sahip çıkmak, gazilerimizin ve korucularımızın haklarını savunmak için Erzurum merkezli olarak faaliyet gösteriyoruz.",
-            misyon: "Şehitlerimizin aziz hatırasını yaşatmak, ailelerimize sahip çıkmak ve gazilerimizin her daim yanında yer alarak toplumsal dayanışmayı güçlendirmek.",
-            vizyon: "Doğu Anadolu bölgesinde vatan evlatları ve emanetleri için en kapsamlı ve güvenilir sivil toplum kuruluşu olmak.",
-            
-            duyurular: [
-                {
-                    baslik: "Yeni Yönetim Kurulu Duyurusu",
-                    tarih: "11 Mart 2026",
-                    resim: "https://images.unsplash.com/photo-1594931920512-409ba55cc5f3?w=800",
-                    metin: "Derneğimizin yeni dönem projelerini görüşmek üzere yönetim kurulumuz Erzurum merkez binamızda toplandı."
-                },
-                {
-                    baslik: "18 Mart Şehitleri Anma Programı",
-                    tarih: "18 Mart 2026",
-                    resim: "https://images.unsplash.com/photo-1572537361219-c96765798782?w=800",
-                    metin: "Çanakkale Zaferi'nin yıl dönümünde tüm şehitlerimizi Erzurum Şehitliği'nde dualarla anacağız."
-                }
-            ]
-        };
     </script>
-</head>
-<body class="bg-gray-50 text-gray-800 antialiased">
 
-    <header class="bg-koyu-siyah text-white fixed w-full top-0 z-50 border-b-4 border-bayrak-kirmizi shadow-lg">
-        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <div class="flex items-center space-x-3">
-                <i class="fa-solid fa-star-and-crescent text-3xl text-bayrak-kirmizi"></i>
-                <div class="leading-tight">
-                    <h1 class="text-sm font-bold uppercase tracking-wider">DOĞU ANADOLU</h1>
-                    <p class="text-[10px] text-gray-400 uppercase">Şehit Aileleri, Gaziler ve Korucuları Derneği</p>
+    <style>
+        /* Özel stil ayarları */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9fafb;
+            color: #1f2937;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+        }
+        .hero-overlay {
+            background: linear-gradient(rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 0.7));
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <!-- NAVBAR -->
+    <nav class="bg-dark-bg text-white border-b-4 border-turkish-red sticky top-0 z-50 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <!-- Logo İkonu (SVG) -->
+                    <svg class="h-10 w-10 text-turkish-red" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2L1 21h22L12 2zm0 3.99L19.53 19H4.47L12 5.99zM11 16h2v2h-2zm0-6h2v4h-2z"/>
+                    </svg>
+                    <div>
+                        <h1 class="text-lg font-bold leading-tight">DERNEĞİ</h1>
+                        <p class="text-xs text-gray-400 tracking-widest uppercase">Doğu Anadolu Şehit Aileleri, Gaziler ve Güvenlik Korucuları</p>
+                    </div>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-turkish-red transition duration-300 font-medium">Ana Sayfa</a>
+                    <a href="#about" class="hover:text-turkish-red transition duration-300 font-medium">Hakkımızda</a>
+                    <a href="#announcements" class="hover:text-turkish-red transition duration-300 font-medium">Duyurular</a>
+                    <a href="#contact" class="hover:text-turkish-red transition duration-300 font-medium">İletişim</a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-white hover:text-turkish-red focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
                 </div>
             </div>
-            <nav class="hidden md:flex space-x-6 text-xs font-bold uppercase">
-                <a href="#hakkimizda" class="hover:text-bayrak-kirmizi">Hakkımızda</a>
-                <a href="#duyurular" class="hover:text-bayrak-kirmizi">Duyurular</a>
-                <a href="#iletisim" class="bg-bayrak-kirmizi px-4 py-2 rounded">İletişim</a>
-            </nav>
+        </div>
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800">
+            <a href="#home" class="block py-2 px-4 text-sm hover:bg-gray-700">Ana Sayfa</a>
+            <a href="#about" class="block py-2 px-4 text-sm hover:bg-gray-700">Hakkımızda</a>
+            <a href="#announcements" class="block py-2 px-4 text-sm hover:bg-gray-700">Duyurular</a>
+            <a href="#contact" class="block py-2 px-4 text-sm hover:bg-gray-700">İletişim</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header id="home" class="relative bg-dark-bg h-[60vh] flex items-center justify-center text-center px-4">
+        <!-- Arka plan görseli (Erzurum manzarası veya soyut bir bayrak dokusu) -->
+        <div class="absolute inset-0 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1542259681-d4cd71d52723?q=80&w=2070&auto=format&fit=crop" alt="Erzurum Manzarası" class="w-full h-full object-cover opacity-40">
+        </div>
+        <div class="absolute inset-0 hero-overlay"></div>
+        
+        <div class="relative z-10 max-w-4xl mx-auto" id="hero-content">
+            <!-- JS ile doldurulacak -->
         </div>
     </header>
 
-    <section class="relative h-[60vh] flex items-center justify-center bg-koyu-siyah">
-        <div class="absolute inset-0 opacity-40">
-            <img src="https://images.unsplash.com/photo-1541963463532-d68292c34b19?w=1600" class="w-full h-full object-cover">
-        </div>
-        <div class="relative z-10 text-center px-4">
-            <h2 class="text-4xl md:text-6xl font-extrabold text-white mb-4">Vatan Size Minnettar</h2>
-            <div class="w-24 h-1 bg-bayrak-kirmizi mx-auto"></div>
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark-bg mb-4">Hakkımızda</h2>
+                <div class="w-24 h-1 bg-turkish-red mx-auto"></div>
+            </div>
+            <div class="prose prose-lg mx-auto text-gray-600 text-center" id="about-text">
+                <!-- JS ile doldurulacak -->
+            </div>
         </div>
     </section>
 
-    <section id="hakkimizda" class="py-20 bg-white">
-        <div class="container mx-auto px-4 max-w-4xl text-center">
-            <h3 class="text-3xl font-bold mb-8 text-koyu-siyah">Biz Kimiz?</h3>
-            <p id="hakkimizda-yazi" class="text-lg text-gray-600 leading-relaxed mb-12 italic"></p>
-            
-            <div class="grid md:grid-cols-2 gap-8 text-left">
-                <div class="p-6 bg-gray-50 rounded-xl border-l-4 border-bayrak-kirmizi">
-                    <h4 class="font-bold text-bayrak-kirmizi mb-2 uppercase text-sm">Misyonumuz</h4>
-                    <p id="misyon-yazi" class="text-gray-700"></p>
+    <!-- MISSION & VISION -->
+    <section class="py-16 bg-light-gray border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Mission -->
+                <div class="bg-white p-8 shadow-md border-t-4 border-turkish-red">
+                    <h3 class="text-2xl font-bold text-dark-bg mb-4">Misyonumuz</h3>
+                    <p class="text-gray-600 leading-relaxed" id="mission-text">
+                        <!-- JS ile doldurulacak -->
+                    </p>
                 </div>
-                <div class="p-6 bg-gray-50 rounded-xl border-l-4 border-bayrak-kirmizi">
-                    <h4 class="font-bold text-bayrak-kirmizi mb-2 uppercase text-sm">Vizyonumuz</h4>
-                    <p id="vizyon-yazi" class="text-gray-700"></p>
+                <!-- Vision -->
+                <div class="bg-white p-8 shadow-md border-t-4 border-turkish-red">
+                    <h3 class="text-2xl font-bold text-dark-bg mb-4">Vizyonumuz</h3>
+                    <p class="text-gray-600 leading-relaxed" id="vision-text">
+                        <!-- JS ile doldurulacak -->
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="duyurular" class="py-20 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <h3 class="text-3xl font-bold text-center mb-16 text-koyu-siyah">Güncel Duyurular</h3>
-            <div id="duyuru-listesi" class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-                </div>
+    <!-- ANNOUNCEMENTS SECTION -->
+    <section id="announcements" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark-bg mb-4">Duyurular & Haberler</h2>
+                <p class="text-gray-500">Derneğimizin resmi duyuruları ve etkinlik takvimi.</p>
+                <div class="w-24 h-1 bg-turkish-red mx-auto mt-4"></div>
+            </div>
+
+            <div id="announcements-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- JS ile duyurular buraya eklenecek -->
+            </div>
         </div>
     </section>
 
-    <footer id="iletisim" class="bg-koyu-siyah text-white py-12 border-t-8 border-bayrak-kirmizi text-center">
-        <p class="mb-4 font-bold uppercase tracking-widest text-sm">Erzurum Şubesi - Doğu Anadolu Bölge Başkanlığı</p>
-        <p class="text-gray-400 text-sm italic mb-6">"Şehitler nurlanmış, Gaziler onurlanmış askerdir."</p>
-        <p class="text-xs text-gray-600">© 2026 Tüm Hakları Saklıdır.</p>
+    <!-- FOOTER -->
+    <footer id="contact" class="bg-dark-bg text-white mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Kolon 1 -->
+                <div>
+                    <h3 class="text-xl font-serif font-bold text-turkish-red mb-4">İletişim</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Adres: Cumhuriyet Mahallesi, Atatürk Bulvarı No: 123<br>
+                        Merkez / Erzurum<br><br>
+                        Telefon: (0442) 222 33 44<br>
+                        E-posta: info@dasgkd.org
+                    </p>
+                </div>
+                <!-- Kolon 2 -->
+                <div>
+                    <h3 class="text-xl font-serif font-bold text-turkish-red mb-4">Hızlı Erişim</h3>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="#home" class="hover:text-white transition">Ana Sayfa</a></li>
+                        <li><a href="#about" class="hover:text-white transition">Hakkımızda</a></li>
+                        <li><a href="#announcements" class="hover:text-white transition">Duyurular</a></li>
+                    </ul>
+                </div>
+                <!-- Kolon 3 -->
+                <div>
+                    <h3 class="text-xl font-serif font-bold text-turkish-red mb-4">Telif Hakkı</h3>
+                    <p class="text-gray-500 text-sm">
+                        &copy; 2023 Doğu Anadolu Şehit Aileleri, Gaziler ve Güvenlik Korucuları Derneği.<br>
+                        Tüm hakları saklıdır.
+                    </p>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-500 text-sm">
+                Erzurum - Türkiye
+            </div>
+        </div>
     </footer>
 
+    <!-- JAVASCRIPT LOGIC -->
     <script>
-        // Verileri sayfaya otomatik basan script
-        document.getElementById('hakkimizda-yazi').innerText = SITE_VERILERI.hakkimizda;
-        document.getElementById('misyon-yazi').innerText = SITE_VERILERI.misyon;
-        document.getElementById('vizyon-yazi').innerText = SITE_VERILERI.vizyon;
-
-        const duyuruListesi = document.getElementById('duyuru-listesi');
-        SITE_VERILERI.duyurular.forEach(d => {
-            duyuruListesi.innerHTML += `
-                <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                    <img src="${d.resim}" class="w-full h-56 object-cover">
-                    <div class="p-6">
-                        <span class="text-xs font-bold text-bayrak-kirmizi uppercase">${d.tarih}</span>
-                        <h4 class="text-xl font-bold mt-2 mb-4 text-koyu-siyah">${d.baslik}</h4>
-                        <p class="text-gray-600 text-sm leading-relaxed">${d.metin}</p>
-                    </div>
-                </div>
-            `;
-        });
-    </script>
-</body>
-</html>
+        // 1. SITE_DATA OBJESİ
+        // Buradaki verileri değiştirdiğinizde site otomatik olarak güncellenecektir.
+        const SITE_DATA = {
+            siteTitle: "Doğu Anadolu Şehit Aileleri, Gaziler ve Güvenlik Korucuları Derneği",
+            hero: {
+                title: "Şehitlerimizi Unutmadık, Gazilerimizle Yan Yana",
+                subtitle: "Doğu Anadolu Bölgesi'nin en köklü ve saygın derneği olarak, şehit yakınlarının ve gazilerimizin yanında olmaya devam ediyoruz.",
+                ctaButton: "Bize Katılın"
+            },
+            about: "Derneğimiz, Doğu Anadolu Bölgesi'nde görev yapan güvenlik güçlerimizin şehit olan ailelerine, gazilerimize ve güvenlik korucularına manevi ve maddi destek sağlamak amacıyla Erzurum merkezli olarak kurulmuştur. Vatan sevgisi, birlik ve beraberlik bilinciyle hareket eden derneğimiz, şehitlerimizin aziz hatırasını yaşatırken, gazilerimizin ve ailelerinin sosyal hayata entegrasyonuna katkı sağlamayı misyon edinmiştir.",
+            mission: "Şehit yakınlarının ve gazilerimizin haklarını korumak, onlara gereken sosyal ve hukuki desteği sağlamak, bölgedeki güvenlik güçlerinin moralini yükseltmek ve vatan sevgisini gelecek nesillere aktarmak.",
+            vision: "Toplumun her kesiminden insanın saygı duyduğu, şehit ve gazilerimizin hak ettiği değeri gördüğü, Doğu Anadolu'nun en güçlü sivil toplum kuruluşu olmak.",
+            announcements: [
+                {
+                    id: 1,
+                    title: "15 Temmuz Demokrasi ve Milli Birlik Günü",
+                    date: "15 Temmuz 2023",
+                    description: "Türkiye Cumhuriyeti'nin ve Türk milletinin bağımsızlığının simgesi olan 15 Temmuz Demokrasi ve Milli Birlik Günü'nü, derneğimiz binasında düzenlediğimiz törenle anıyoruz.",
+                    image: "https://images.unsplash.com/photo-1579969565606-732772222323?q=80&w=800&auto=format&fit=crop"
+                },
+                {
+                    id: 2,
+                    title: "Gaziler Günü Kutlamaları",
+                    date: "18 Haziran 2023",
+                    description: "Gaziler Günü kapsamında, şehit yakınlarımız ve gazilerimiz için özel bir kahvaltı programı düzenlenecektir. Tüm üyelerimizin davetlisidir.",
+                    image: "https://images.unsplash.com/photo-1596728328960-225324422423?q=80&w=800&auto=format&fit=crop"
+                },
+                {
+                    id: 3,
+                    title: "Yeni Üye Kayıtları Başladı",
+                    date: "01 Haziran 2023",
+                    description: "Derneğimize yeni üyelerin kabulü için kayıt süreci başlamıştır. Güvenlik korucuları ve şehit yakınlarımızın başvuruları kabul edilmektedir.",
+                    image: "https
