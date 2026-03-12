@@ -13,12 +13,12 @@
         <div class="max-w-7xl mx-auto px-4 h-full flex justify-between items-center relative">
             <a href="index.html" class="flex items-center gap-3">
                 <img src="logo.png" alt="Logo" class="h-10 w-auto object-contain">
-                <h1 class="text-sm md:text-lg font-bold uppercase tracking-tight">DOĞU ANADOLU</h1>
+                <h1 class="text-sm md:text-lg font-bold uppercase tracking-tight text-white">DOĞU ANADOLU</h1>
             </a>
             <div class="hidden md:flex space-x-6 items-center font-bold text-xs uppercase">
-                <a href="index.html" class="hover:text-[#E30A17] transition">Anasayfa</a>
-                <a href="hakkimizda.html" class="hover:text-[#E30A17] transition">Hakkımızda</a>
-                <a href="sehitlerimiz.html" class="hover:text-[#E30A17] transition">Şehitlerimiz</a>
+                <a href="index.html" class="hover:text-[#E30A17] transition text-white">Anasayfa</a>
+                <a href="hakkimizda.html" class="hover:text-[#E30A17] transition text-white">Hakkımızda</a>
+                <a href="sehitlerimiz.html" class="hover:text-[#E30A17] transition text-white">Şehitlerimiz</a>
                 <a href="uyelik.html" class="text-[#E30A17]">Üyelik</a>
             </div>
             <div class="flex md:hidden items-center">
@@ -36,41 +36,42 @@
 
     <main class="container mx-auto px-4 py-12 max-w-3xl">
         <div class="bg-gray-800/50 p-8 rounded-2xl border border-gray-700 shadow-2xl">
-            <form id="membershipForm" action="https://script.google.com/macros/s/AKfycbxwT823PuzeM_akURamMoa3KHhf_DEGrS58sqm0hzgidO18qcUQ6vXCqmRdcdYaDO8uTw/exec" method="POST" enctype="multipart/form-data" class="space-y-6">
+            <form id="membershipForm" action="https://formspree.io/f/xbdzoazb" method="POST" enctype="multipart/form-data" class="space-y-6">
                 
                 <p class="text-gray-400 text-sm italic border-b border-gray-700 pb-2">* Yıldızlı alanların doldurulması zorunludur.</p>
 
+                <input type="hidden" id="googleScriptUrl" value="https://script.google.com/macros/s/AKfycbxwT823PuzeM_akURamMoa3KHhf_DEGrS58sqm0hzgidO18qcUQ6vXCqmRdcdYaDO8uTw/exec">
+
                 <div>
-                    <label class="block text-xs font-bold uppercase mb-2">Ad Soyad *</label>
-                    <input type="text" name="ad_soyad" required class="w-full bg-gray-900 border border-gray-700 p-3 rounded focus:border-[#E30A17] outline-none transition">
+                    <label class="block text-xs font-bold uppercase mb-2 text-white">Ad Soyad *</label>
+                    <input type="text" name="Ad_Soyad" required class="w-full bg-gray-900 border border-gray-700 p-3 rounded focus:border-[#E30A17] outline-none transition text-white">
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                        <label class="block text-xs font-bold uppercase mb-2">E-Mail Adresi *</label>
-                        <input type="email" name="email" required class="w-full bg-gray-900 border border-gray-700 p-3 rounded focus:border-[#E30A17] outline-none">
+                        <label class="block text-xs font-bold uppercase mb-2 text-white">E-Mail Adresi *</label>
+                        <input type="email" name="Email_Adresi" required class="w-full bg-gray-900 border border-gray-700 p-3 rounded focus:border-[#E30A17] outline-none text-white">
                     </div>
                     <div>
-                        <label class="block text-xs font-bold uppercase mb-2">Telefon Numarası *</label>
-                        <input type="tel" name="telefon" placeholder="05xx xxx xx xx" required class="w-full bg-gray-900 border border-gray-700 p-3 rounded focus:border-[#E30A17] outline-none">
+                        <label class="block text-xs font-bold uppercase mb-2 text-white">Telefon Numarası *</label>
+                        <input type="tel" name="Telefon_No" placeholder="05xx xxx xx xx" required class="w-full bg-gray-900 border border-gray-700 p-3 rounded focus:border-[#E30A17] outline-none text-white">
                     </div>
                 </div>
 
                 <div class="space-y-6 bg-gray-900/50 p-6 rounded-xl border border-dashed border-gray-600">
                     <div>
-                        <label class="block text-xs font-bold uppercase mb-2"><i class="fa-solid fa-camera mr-2 text-[#E30A17]"></i> Vesikalık Fotoğraf (Geçerli Bir Fotoğraf) *</label>
-                        <input type="file" name="fotograf" accept="image/*" required class="text-sm text-gray-400 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:bg-[#E30A17] file:text-white hover:file:bg-red-700">
+                        <label class="block text-xs font-bold uppercase mb-2 text-white"><i class="fa-solid fa-camera mr-2 text-[#E30A17]"></i> Vesikalık Fotoğraf *</label>
+                        <input type="file" name="fotograf" accept="image/*" required class="text-sm text-gray-400 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:bg-[#E30A17] file:text-white hover:file:bg-red-700 cursor-pointer">
                     </div>
 
                     <div>
-                        <label class="block text-xs font-bold uppercase mb-2"><i class="fa-solid fa-file-shield mr-2 text-[#E30A17]"></i> E-Devlet Adli Sicil Kaydı (PDF/JPG) *</label>
-                        <input type="file" name="adli_sicil" accept=".pdf,image/*" required class="text-sm text-gray-400 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:bg-[#E30A17] file:text-white hover:file:bg-red-700">
+                        <label class="block text-xs font-bold uppercase mb-2 text-white"><i class="fa-solid fa-file-shield mr-2 text-[#E30A17]"></i> E-Devlet Adli Sicil Kaydı (PDF/JPG) *</label>
+                        <input type="file" name="adli_sicil" accept=".pdf,image/*" required class="text-sm text-gray-400 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:bg-[#E30A17] file:text-white hover:file:bg-red-700 cursor-pointer">
                     </div>
 
                     <div class="pt-4 border-t border-gray-700">
                         <label class="block text-xs font-bold uppercase mb-2 text-yellow-500 italic">Güvenlik Korucusu İseniz (Opsiyonel):</label>
-                        <label class="block text-[10px] text-gray-500 mb-2">Görev Belgesi / Çalıştığına Dair Evrak</label>
-                        <input type="file" name="korucu_evrak" accept=".pdf,image/*" class="text-sm text-gray-400 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:bg-gray-700 file:text-white">
+                        <input type="file" name="korucu_evrak" accept=".pdf,image/*" class="text-sm text-gray-400 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:bg-gray-700 file:text-white cursor-pointer">
                     </div>
                 </div>
 
@@ -84,63 +85,74 @@
     <footer class="bg-[#111827] border-t-4 border-[#E30A17] py-12 text-center">
         <p class="text-gray-500 text-[10px] tracking-[0.5em] uppercase">© 2026 Doğu Anadolu Şehit Gazi Derneği | Erzurum</p>
     </footer>
+
     <script>
         const form = document.getElementById('membershipForm');
         const submitBtn = document.getElementById('submitBtn');
-    
-        // Formun içindeki tüm zorunlu (required) alanları izleyelim
+        const googleUrl = document.getElementById('googleScriptUrl').value;
+
+        // Buton Aktif Etme Kontrolü
         form.addEventListener('input', () => {
             const requiredFields = form.querySelectorAll('[required]');
             let isFormValid = true;
 
             requiredFields.forEach(field => {
                 if (field.type === 'file') {
-                    // Dosya seçilmiş mi kontrol et
                     if (field.files.length === 0) isFormValid = false;
                 } else {
-                    // Metin alanı boş mu kontrol et
                     if (field.value.trim() === "") isFormValid = false;
                 }
             });
 
-            // Eğer her şey tamamsa butonu aç
             if (isFormValid) {
                 submitBtn.disabled = false;
-                submitBtn.classList.remove('bg-gray-600', 'cursor-not-allowed');
-                submitBtn.classList.add('bg-[#E30A17]', 'hover:bg-red-700');
+                submitBtn.classList.replace('bg-gray-600', 'bg-[#E30A17]');
+                submitBtn.classList.remove('cursor-not-allowed');
             } else {
                 submitBtn.disabled = true;
-                submitBtn.classList.add('bg-gray-600', 'cursor-not-allowed');
-                submitBtn.classList.remove('bg-[#E30A17]', 'hover:bg-red-700');
+                submitBtn.classList.replace('bg-[#E30A17]', 'bg-gray-600');
+                submitBtn.classList.add('cursor-not-allowed');
             }
         });
 
-        // Formu Google Sheets'e Gönderme Kısmı
+        // Form Gönderme İşlemi
         form.onsubmit = function(e) {
             e.preventDefault();
-        
+            
             submitBtn.disabled = true;
             submitBtn.innerText = "KAYDEDİLİYOR...";
 
-            const formData = new FormData(form);
+            // 1. ADIM: Google Sheets'e Veri Gönder (Sadece Metinler)
+            const googleData = new FormData();
+            googleData.append('Ad_Soyad', form.Ad_Soyad.value);
+            googleData.append('Email_Adresi', form.Email_Adresi.value);
+            googleData.append('Telefon_No', form.Telefon_No.value);
 
+            fetch(googleUrl, {
+                method: 'POST',
+                body: googleData,
+                mode: 'no-cors'
+            });
+
+            // 2. ADIM: Formspree'ye Gönder (Tüm Form ve Dosyalar)
             fetch(form.action, {
                 method: 'POST',
-                body: formData,
-                mode: 'no-cors'
-            })
-                .then(() => {
+                body: new FormData(form),
+                headers: { 'Accept': 'application/json' }
+            }).then(response => {
+                if (response.ok) {
                     const siraNo = Math.floor(1000 + Math.random() * 9000);
-                    alert("Başvurunuz #" + siraNo + " numarası ile başarıyla kaydedilmiştir. Teşekkür ederiz.");
+                    alert("Başvurunuz #" + siraNo + " numarası ile başarıyla alınmıştır. Belgeler mail adresimize iletildi.");
                     form.reset();
                     submitBtn.innerText = "BAŞVURUYU TAMAMLA / KAYDET";
-                })
-                .catch(error => {
-                    alert("Bir hata oluştu. Lütfen tekrar deneyin.");
-                    submitBtn.disabled = false;
-                });
+                } else {
+                    alert("Bir hata oluştu, lütfen tekrar deneyin.");
+                }
+            }).catch(() => {
+                alert("Bağlantı hatası.");
+                submitBtn.disabled = false;
+            });
         };
     </script>
-    
 </body>
 </html>
