@@ -13,7 +13,7 @@
         <div class="max-w-7xl mx-auto px-4 h-full flex justify-between items-center relative">
             <a href="index.html" class="flex items-center gap-3">
                 <img src="logo.png" alt="Logo" class="h-10 w-auto object-contain">
-                <h1 class="text-sm md:text-lg font-bold uppercase tracking-tight text-white">DOĞU ANADOLU</h1>
+                <h1 class="text-sm md:text-lg font-bold uppercase tracking-tight">DOĞU ANADOLU</h1>
             </a>
             <div class="hidden md:flex space-x-6 items-center font-bold text-xs uppercase">
                 <a href="index.html" class="hover:text-[#E30A17] transition text-white">Anasayfa</a>
@@ -36,47 +36,41 @@
 
     <main class="container mx-auto px-4 py-12 max-w-3xl">
         <div class="bg-gray-800/50 p-8 rounded-2xl border border-gray-700 shadow-2xl">
-            <form id="membershipForm" action="https://formspree.io/f/xbdzoazb" method="POST" enctype="multipart/form-data" class="space-y-6">
+            <form id="membershipForm" class="space-y-6">
                 
-                <p class="text-gray-400 text-sm italic border-b border-gray-700 pb-2">* Yıldızlı alanların doldurulması zorunludur.</p>
-
-                <input type="hidden" id="googleScriptUrl" value="https://script.google.com/macros/s/AKfycbxwT823PuzeM_akURamMoa3KHhf_DEGrS58sqm0hzgidO18qcUQ6vXCqmRdcdYaDO8uTw/exec">
+                <p class="text-gray-400 text-sm italic border-b border-gray-700 pb-2">Bilgilerinizi doldurduktan sonra e-posta uygulamanız açılacaktır.</p>
 
                 <div>
-                    <label class="block text-xs font-bold uppercase mb-2 text-white">Ad Soyad *</label>
-                    <input type="text" name="Ad_Soyad" required class="w-full bg-gray-900 border border-gray-700 p-3 rounded focus:border-[#E30A17] outline-none transition text-white">
+                    <label class="block text-xs font-bold uppercase mb-2">Ad Soyad *</label>
+                    <input type="text" id="ad_soyad" required class="w-full bg-gray-900 border border-gray-700 p-3 rounded focus:border-[#E30A17] outline-none transition text-white">
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                        <label class="block text-xs font-bold uppercase mb-2 text-white">E-Mail Adresi *</label>
-                        <input type="email" name="Email_Adresi" required class="w-full bg-gray-900 border border-gray-700 p-3 rounded focus:border-[#E30A17] outline-none text-white">
+                        <label class="block text-xs font-bold uppercase mb-2">E-Mail Adresi *</label>
+                        <input type="email" id="email" required class="w-full bg-gray-900 border border-gray-700 p-3 rounded focus:border-[#E30A17] outline-none text-white">
                     </div>
                     <div>
-                        <label class="block text-xs font-bold uppercase mb-2 text-white">Telefon Numarası *</label>
-                        <input type="tel" name="Telefon_No" placeholder="05xx xxx xx xx" required class="w-full bg-gray-900 border border-gray-700 p-3 rounded focus:border-[#E30A17] outline-none text-white">
+                        <label class="block text-xs font-bold uppercase mb-2">Telefon Numarası *</label>
+                        <input type="tel" id="telefon" placeholder="05xx xxx xx xx" required class="w-full bg-gray-900 border border-gray-700 p-3 rounded focus:border-[#E30A17] outline-none text-white">
                     </div>
                 </div>
 
-                <div class="space-y-6 bg-gray-900/50 p-6 rounded-xl border border-dashed border-gray-600">
-                    <div>
-                        <label class="block text-xs font-bold uppercase mb-2 text-white"><i class="fa-solid fa-camera mr-2 text-[#E30A17]"></i> Vesikalık Fotoğraf *</label>
-                        <input type="file" name="fotograf" accept="image/*" required class="text-sm text-gray-400 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:bg-[#E30A17] file:text-white hover:file:bg-red-700 cursor-pointer">
-                    </div>
-
-                    <div>
-                        <label class="block text-xs font-bold uppercase mb-2 text-white"><i class="fa-solid fa-file-shield mr-2 text-[#E30A17]"></i> E-Devlet Adli Sicil Kaydı (PDF/JPG) *</label>
-                        <input type="file" name="adli_sicil" accept=".pdf,image/*" required class="text-sm text-gray-400 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:bg-[#E30A17] file:text-white hover:file:bg-red-700 cursor-pointer">
-                    </div>
-
-                    <div class="pt-4 border-t border-gray-700">
-                        <label class="block text-xs font-bold uppercase mb-2 text-yellow-500 italic">Güvenlik Korucusu İseniz (Opsiyonel):</label>
-                        <input type="file" name="korucu_evrak" accept=".pdf,image/*" class="text-sm text-gray-400 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:bg-gray-700 file:text-white cursor-pointer">
-                    </div>
+                <div class="bg-blue-900/20 border border-blue-500/50 p-4 rounded-lg">
+                    <p class="text-sm text-blue-200">
+                        <i class="fa-solid fa-circle-info mr-2"></i>
+                        <strong>ZORUNLU BELGELER:</strong> Butona bastığınızda açılacak e-postaya aşağıdaki belgeleri eklemeniz gerekmektedir:
+                    </p>
+                    <ul class="text-xs text-blue-300 mt-2 list-disc list-inside space-y-1">
+                        <li>Vesikalık Fotoğraf</li>
+                        <li>E-Devlet Adli Sicil Kaydı</li>
+                        <li><strong>Güncel İkametgah Belgesi (Zorunlu)</strong></li>
+                    </ul>
                 </div>
 
-                <button type="submit" id="submitBtn" disabled class="w-full py-4 bg-gray-600 text-white font-black uppercase tracking-widest rounded-lg shadow-xl cursor-not-allowed transition-all">
-                    Başvuruyu Tamamla / Kaydet
+                <button type="submit" id="submitBtn" class="w-full py-4 bg-[#E30A17] hover:bg-red-700 text-white font-black uppercase tracking-widest rounded-lg shadow-xl transition-all flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-envelope"></i>
+                    BAŞVURUYU E-POSTA İLE GÖNDER
                 </button>
             </form>
         </div>
@@ -88,70 +82,40 @@
 
     <script>
         const form = document.getElementById('membershipForm');
-        const submitBtn = document.getElementById('submitBtn');
-        const googleUrl = document.getElementById('googleScriptUrl').value;
 
-        // Buton Aktif Etme Kontrolü
-        form.addEventListener('input', () => {
-            const requiredFields = form.querySelectorAll('[required]');
-            let isFormValid = true;
-
-            requiredFields.forEach(field => {
-                if (field.type === 'file') {
-                    if (field.files.length === 0) isFormValid = false;
-                } else {
-                    if (field.value.trim() === "") isFormValid = false;
-                }
-            });
-
-            if (isFormValid) {
-                submitBtn.disabled = false;
-                submitBtn.classList.replace('bg-gray-600', 'bg-[#E30A17]');
-                submitBtn.classList.remove('cursor-not-allowed');
-            } else {
-                submitBtn.disabled = true;
-                submitBtn.classList.replace('bg-[#E30A17]', 'bg-gray-600');
-                submitBtn.classList.add('cursor-not-allowed');
-            }
-        });
-
-        // Form Gönderme İşlemi
         form.onsubmit = function(e) {
             e.preventDefault();
+
+            // Form verilerini al
+            const adSoyad = document.getElementById('ad_soyad').value;
+            const email = document.getElementById('email').value;
+            const telefon = document.getElementById('telefon').value;
             
-            submitBtn.disabled = true;
-            submitBtn.innerText = "KAYDEDİLİYOR...";
+            // Dernek Mail Adresi
+            const dernekMail = "doguanadolusehitgazi@gmail.com";
+            
+            // E-posta Konusu
+            const konu = `Yeni Üyelik Başvurusu - ${adSoyad}`;
+            
+            // E-posta İçeriği
+            const icerik = `SAYIN DERNEK YÖNETİMİ,%0A%0A` +
+                           `Aşağıdaki bilgilere sahip kişi dernek üyeliği için başvuruda bulunmuştur:%0A%0A` +
+                           `Ad Soyad: ${adSoyad}%0A` +
+                           `E-posta: ${email}%0A` +
+                           `Telefon: ${telefon}%0A%0A` +
+                           `LÜTFEN BU E-POSTAYA ŞU BELGELERİ EKLEYEREK GÖNDERİNİZ:%0A` +
+                           `1- Vesikalık Fotoğraf%0A` +
+                           `2- Adli Sicil Kaydı%0A` +
+                           `3- GÜNCEL İKAMETGAH BELGESİ (Zorunlu)%0A%0A` +
+                           `Not: Belgelerinizi eklemeden gönderilen başvurular geçersiz sayılacaktır.`;
 
-            // 1. ADIM: Google Sheets'e Veri Gönder (Sadece Metinler)
-            const googleData = new FormData();
-            googleData.append('Ad_Soyad', form.Ad_Soyad.value);
-            googleData.append('Email_Adresi', form.Email_Adresi.value);
-            googleData.append('Telefon_No', form.Telefon_No.value);
+            // Mailto Linkini Oluştur
+            const mailtoLink = `mailto:${dernekMail}?subject=${encodeURIComponent(konu)}&body=${icerik}`;
 
-            fetch(googleUrl, {
-                method: 'POST',
-                body: googleData,
-                mode: 'no-cors'
-            });
+            // Mail uygulamasını aç
+            window.location.href = mailtoLink;
 
-            // 2. ADIM: Formspree'ye Gönder (Tüm Form ve Dosyalar)
-            fetch(form.action, {
-                method: 'POST',
-                body: new FormData(form),
-                headers: { 'Accept': 'application/json' }
-            }).then(response => {
-                if (response.ok) {
-                    const siraNo = Math.floor(1000 + Math.random() * 9000);
-                    alert("Başvurunuz #" + siraNo + " numarası ile başarıyla alınmıştır. Belgeler mail adresimize iletildi.");
-                    form.reset();
-                    submitBtn.innerText = "BAŞVURUYU TAMAMLA / KAYDET";
-                } else {
-                    alert("Bir hata oluştu, lütfen tekrar deneyin.");
-                }
-            }).catch(() => {
-                alert("Bağlantı hatası.");
-                submitBtn.disabled = false;
-            });
+            alert("E-posta uygulamanız açılıyor. Lütfen İkametgah Belgesi dahil tüm belgelerinizi ekleyerek 'Gönder' butonuna basınız.");
         };
     </script>
 </body>
