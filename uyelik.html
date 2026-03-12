@@ -87,32 +87,58 @@
 
 <script>
     const form = document.getElementById('membershipForm');
+    const submitBtn = document.getElementById('submitBtn');
+    
+    // Formun içindeki tüm zorunlu (required) alanları izleyelim
+    form.addEventListener('input', () => {
+        const requiredFields = form.querySelectorAll('[required]');
+        let isFormValid = true;
 
+        requiredFields.forEach(field => {
+            if (field.type === 'file') {
+                // Dosya seçilmiş mi kontrol et
+                if (field.files.length === 0) isFormValid = false;
+            } else {
+                // Metin alanı boş mu kontrol et
+                if (field.value.trim() === "") isFormValid = false;
+            }
+        });
+
+        // Eğer her şey tamamsa butonu aç
+        if (isFormValid) {
+            submitBtn.disabled = false;
+            submitBtn.classList.remove('bg-gray-600', 'cursor-not-allowed');
+            submitBtn.classList.add('bg-[#E30A17]', 'hover:bg-red-700');
+        } else {
+            submitBtn.disabled = true;
+            submitBtn.classList.add('bg-gray-600', 'cursor-not-allowed');
+            submitBtn.classList.remove('bg-[#E30A17]', 'hover:bg-red-700');
+        }
+    });
+
+    // Formu Google Sheets'e Gönderme Kısmı
     form.onsubmit = function(e) {
-        // Formu normal yolla göndermek yerine JavaScript ile gönderelim (Hata almamak için)
-        e.preventDefault(); 
+        e.preventDefault();
         
-        const submitBtn = document.getElementById('submitBtn');
         submitBtn.disabled = true;
-        submitBtn.innerText = "Kaydediliyor...";
+        submitBtn.innerText = "KAYDEDİLİYOR...";
 
         const formData = new FormData(form);
 
         fetch(form.action, {
             method: 'POST',
             body: formData,
-            mode: 'no-cors' // Google Script için bu mod hatayı engeller
+            mode: 'no-cors'
         })
         .then(() => {
             const siraNo = Math.floor(1000 + Math.random() * 9000);
-            alert(siraNo + " sıra numarası ile başvurunuz Excel tablomuza kaydedilmiştir. Teşekkür ederiz.");
+            alert("Başvurunuz #" + siraNo + " numarası ile başarıyla kaydedilmiştir. Teşekkür ederiz.");
             form.reset();
-            submitBtn.disabled = false;
-            submitBtn.innerText = "Başvuruyu Tamamla / Kaydet";
+            submitBtn.innerText = "BAŞVURUYU TAMAMLA / KAYDET";
         })
         .catch(error => {
-            alert("Bir hata oluştu, lütfen internet bağlantınızı kontrol edin.");
-            console.error(error);
+            alert("Bir hata oluştu. Lütfen tekrar deneyin.");
+            submitBtn.disabled = false;
         });
     };
 </script>
