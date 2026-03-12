@@ -13,9 +13,9 @@
         <div class="max-w-7xl mx-auto px-4 h-full flex justify-between items-center">
             <a href="index.html" class="flex items-center gap-3">
                 <img src="logo.png" alt="Logo" class="h-12 w-auto">
-                <h1 class="text-sm md:text-lg font-bold uppercase">DOĞU ANADOLU</h1>
+                <h1 class="text-sm md:text-lg font-bold uppercase text-white">DOĞU ANADOLU</h1>
             </a>
-            <button id="mobile-menu-btn" class="md:hidden text-2xl p-2"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+            <button id="mobile-menu-btn" class="md:hidden text-2xl p-2 text-white"><i class="fa-solid fa-ellipsis-vertical"></i></button>
             <div class="hidden md:flex space-x-6 items-center font-bold text-xs uppercase text-white">
                 <a href="index.html">Anasayfa</a>
                 <a href="sehitlerimiz.html" class="text-[#E30A17]">Şehitlerimiz</a>
@@ -24,83 +24,19 @@
         </div>
         <div id="mobile-sidebar" class="fixed inset-y-0 right-0 w-64 bg-[#111827] z-[60] transform translate-x-full transition-transform duration-300 border-l-4 border-[#E30A17] md:hidden">
             <div class="p-8 flex flex-col space-y-6 font-bold uppercase text-sm">
-                <button id="close-sidebar" class="self-end text-2xl mb-4"><i class="fa-solid fa-xmark"></i></button>
-                <a href="index.html">Anasayfa</a>
+                <button id="close-sidebar" class="self-end text-2xl mb-4 text-white"><i class="fa-solid fa-xmark"></i></button>
+                <a href="index.html" class="text-white">Anasayfa</a>
                 <a href="sehitlerimiz.html" class="text-[#E30A17]">Şehitlerimiz</a>
-                <a href="iletisim.html">İletişim</a>
+                <a href="iletisim.html" class="text-white">İletişim</a>
             </div>
         </div>
         <div id="sidebar-overlay" class="fixed inset-0 bg-black/70 z-[55] hidden md:hidden"></div>
     </nav>
 
     <header class="py-12 text-center bg-gray-900/50">
-        <h2 class="text-4xl font-bold uppercase tracking-widest">Aziz Şehitlerimiz</h2>
+        <h2 class="text-4xl font-bold uppercase tracking-widest text-white">Aziz Şehitlerimiz</h2>
         <div class="w-24 h-1 bg-[#E30A17] mx-auto mt-4"></div>
     </header>
 
     <main class="container mx-auto px-4 py-12">
         <div id="sehit-listesi" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-
-            <div class="group border border-gray-800 p-4 rounded-xl bg-gray-900/30 hover:border-[#E30A17] transition-all duration-500 shadow-lg">
-                <a href="sehit-huseyin-kaya.html" class="block">
-                    <div class="aspect-[3/4] overflow-hidden rounded-lg mb-4">
-                        <img src="sehit-huseyin-kaya.png" 
-                             alt="Hüseyin Kaya" 
-                             class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700">
-                    </div>
-                    <h3 class="text-xl font-bold uppercase text-center group-hover:text-[#E30A17] transition-colors">Hüseyin Kaya</h3>
-                    <p class="text-[10px] text-gray-500 text-center uppercase mt-2 tracking-widest">Şehadet: 16.11.1996</p>
-                </a>
-            </div>
-
-            <div class="group border border-gray-800 p-4 rounded-xl bg-gray-900/30 hover:border-[#E30A17] transition-all duration-500 shadow-lg">
-                <a href="sehit-enmar-kalo.html" class="block">
-                    <div class="aspect-[3/4] overflow-hidden rounded-lg mb-4">
-                        <img src="sehit-enmar-kalo.png" 
-                             alt="Enmar Kalo" 
-                             class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700">
-                    </div>
-                    <h3 class="text-xl font-bold uppercase text-center group-hover:text-[#E30A17] transition-colors">Enmar Kalo</h3>
-                    <p class="text-[10px] text-gray-500 text-center uppercase mt-2 tracking-widest">Şehadet: 30.04.1995</p>
-                </a>
-            </div>
-
-            <div class="group border border-gray-800 p-4 rounded-xl bg-gray-900/30 hover:border-[#E30A17] transition-all duration-500 shadow-lg">
-                <a href="sehit-cihat-dumludag.html" class="block">
-                    <div class="aspect-[3/4] overflow-hidden rounded-lg mb-4">
-                        <img src="sehit-cihat-dumludag.png" 
-                             alt="Cihat Dumludağ" 
-                             class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700"">
-                    </div>
-                    <h3 class="text-xl font-bold uppercase text-center group-hover:text-[#E30A17] transition-colors">Cihat Dumludağ</h3>
-                    <p class="text-[10px] text-gray-500 text-center uppercase mt-2 tracking-widest italic">Şehit Polis Memuru</p>
-                    <p class="text-[10px] text-gray-500 text-center uppercase mt-1 tracking-widest">Şehadet: 25.02.1987</p>
-                </a>
-            </div>
-            <div class="group border border-gray-800 p-4 rounded-xl bg-gray-900/30 hover:border-[#E30A17] transition-all duration-500 shadow-lg">
-                <a href="sehit-ishak-celik.html" class="block">
-                    <div class="aspect-[3/4] overflow-hidden rounded-lg mb-4">
-                        <img src="sehit-ishak-celik.png" 
-                            alt="İshak Çelik" 
-                            class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700"
-                            onerror="this.src='logo.png'">
-                    </div>
-                    <h3 class="text-xl font-bold uppercase text-center group-hover:text-[#E30A17] transition-colors">İshak Çelik</h3>
-                    <p class="text-[10px] text-gray-500 text-center uppercase mt-2 tracking-widest italic">Şehit Polis Memuru</p>
-                    <p class="text-[10px] text-gray-500 text-center uppercase mt-1 tracking-widest">Şehadet: 26.06.1993</p>
-                </a>
-            </div>
-
-        </div>
-    </main>
-
-    <script>
-        const btn = document.getElementById('mobile-menu-btn');
-        const close = document.getElementById('close-sidebar');
-        const side = document.getElementById('mobile-sidebar');
-        const over = document.getElementById('sidebar-overlay');
-        function toggle() { side.classList.toggle('translate-x-full'); over.classList.toggle('hidden'); }
-        btn.onclick = toggle; close.onclick = toggle; over.onclick = toggle;
-    </script>
-</body>
-</html>
