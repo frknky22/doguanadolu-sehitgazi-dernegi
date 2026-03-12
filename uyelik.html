@@ -84,63 +84,63 @@
     <footer class="bg-[#111827] border-t-4 border-[#E30A17] py-12 text-center">
         <p class="text-gray-500 text-[10px] tracking-[0.5em] uppercase">© 2026 Doğu Anadolu Şehit Gazi Derneği | Erzurum</p>
     </footer>
-
-<script>
-    const form = document.getElementById('membershipForm');
-    const submitBtn = document.getElementById('submitBtn');
+    <script>
+        const form = document.getElementById('membershipForm');
+        const submitBtn = document.getElementById('submitBtn');
     
-    // Formun içindeki tüm zorunlu (required) alanları izleyelim
-    form.addEventListener('input', () => {
-        const requiredFields = form.querySelectorAll('[required]');
-        let isFormValid = true;
+        // Formun içindeki tüm zorunlu (required) alanları izleyelim
+        form.addEventListener('input', () => {
+            const requiredFields = form.querySelectorAll('[required]');
+            let isFormValid = true;
 
-        requiredFields.forEach(field => {
-            if (field.type === 'file') {
-                // Dosya seçilmiş mi kontrol et
-                if (field.files.length === 0) isFormValid = false;
+            requiredFields.forEach(field => {
+                if (field.type === 'file') {
+                    // Dosya seçilmiş mi kontrol et
+                    if (field.files.length === 0) isFormValid = false;
+                } else {
+                    // Metin alanı boş mu kontrol et
+                    if (field.value.trim() === "") isFormValid = false;
+                }
+            });
+
+            // Eğer her şey tamamsa butonu aç
+            if (isFormValid) {
+                submitBtn.disabled = false;
+                submitBtn.classList.remove('bg-gray-600', 'cursor-not-allowed');
+                submitBtn.classList.add('bg-[#E30A17]', 'hover:bg-red-700');
             } else {
-                // Metin alanı boş mu kontrol et
-                if (field.value.trim() === "") isFormValid = false;
+                submitBtn.disabled = true;
+                submitBtn.classList.add('bg-gray-600', 'cursor-not-allowed');
+                submitBtn.classList.remove('bg-[#E30A17]', 'hover:bg-red-700');
             }
         });
 
-        // Eğer her şey tamamsa butonu aç
-        if (isFormValid) {
-            submitBtn.disabled = false;
-            submitBtn.classList.remove('bg-gray-600', 'cursor-not-allowed');
-            submitBtn.classList.add('bg-[#E30A17]', 'hover:bg-red-700');
-        } else {
-            submitBtn.disabled = true;
-            submitBtn.classList.add('bg-gray-600', 'cursor-not-allowed');
-            submitBtn.classList.remove('bg-[#E30A17]', 'hover:bg-red-700');
-        }
-    });
-
-    // Formu Google Sheets'e Gönderme Kısmı
-    form.onsubmit = function(e) {
-        e.preventDefault();
+        // Formu Google Sheets'e Gönderme Kısmı
+        form.onsubmit = function(e) {
+            e.preventDefault();
         
-        submitBtn.disabled = true;
-        submitBtn.innerText = "KAYDEDİLİYOR...";
+            submitBtn.disabled = true;
+            submitBtn.innerText = "KAYDEDİLİYOR...";
 
-        const formData = new FormData(form);
+            const formData = new FormData(form);
 
-        fetch(form.action, {
-            method: 'POST',
-            body: formData,
-            mode: 'no-cors'
-        })
-        .then(() => {
-            const siraNo = Math.floor(1000 + Math.random() * 9000);
-            alert("Başvurunuz #" + siraNo + " numarası ile başarıyla kaydedilmiştir. Teşekkür ederiz.");
-            form.reset();
-            submitBtn.innerText = "BAŞVURUYU TAMAMLA / KAYDET";
-        })
-        .catch(error => {
-            alert("Bir hata oluştu. Lütfen tekrar deneyin.");
-            submitBtn.disabled = false;
-        });
-    };
-</script>
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                mode: 'no-cors'
+            })
+                .then(() => {
+                    const siraNo = Math.floor(1000 + Math.random() * 9000);
+                    alert("Başvurunuz #" + siraNo + " numarası ile başarıyla kaydedilmiştir. Teşekkür ederiz.");
+                    form.reset();
+                    submitBtn.innerText = "BAŞVURUYU TAMAMLA / KAYDET";
+                })
+                .catch(error => {
+                    alert("Bir hata oluştu. Lütfen tekrar deneyin.");
+                    submitBtn.disabled = false;
+                });
+        };
+    </script>
+    
 </body>
 </html>
